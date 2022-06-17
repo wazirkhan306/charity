@@ -27,9 +27,12 @@ use App\Http\Controllers\dashboardProjectController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\dashboardAssignProjectController;
+use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\DonorController;
 
 Auth::routes();
+Route::get('stripe', [StripePaymentController::class , 'stripe']);
+Route::post('stripe', [StripePaymentController::class, 'stripePost'])->name('stripe.post');
 
 Route::get('/login/staff', [LoginController::class, 'showStaffLoginForm']);
 Route::post('/staff/login', [LoginController::class, 'staffLogin'])->name('staff.login');
