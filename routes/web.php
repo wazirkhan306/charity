@@ -31,7 +31,7 @@ use App\Http\Controllers\DonorController;
 
 Auth::routes();
 
-Route::get('/login/staff', [LoginController::class, 'showStaffLoginForm']);
+Route::get('/login/staff', [LoginController::class, 'showStaffLoginForm'])->name('staff.login_form');
 Route::post('/staff/login', [LoginController::class, 'staffLogin'])->name('staff.login');
 Route::get('/login/donor', [LoginController::class, 'showDonorLoginForm'])->name('donor.login_form');
 Route::post('/login/donor', [LoginController::class, 'donorLogin'])->name('donor.login');

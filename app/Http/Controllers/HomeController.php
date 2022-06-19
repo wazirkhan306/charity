@@ -8,6 +8,7 @@ use App\Models\setting;
 use App\Models\Event;
 use App\Models\Gallery;
 use App\Models\Post;
+use App\Models\Project;
 use App\Models\Role;
 use App\Models\User;
 use Session;
@@ -19,10 +20,11 @@ class HomeController extends Controller
     public function index()
     {
         $Causes = Cause::orderBy('created_at','desc')->paginate(6);
+        $projects = Project::orderBy('created_at','desc')->paginate(6);
         $Events = Event::orderBy('created_at','desc')->paginate(4);
         $Posts = Post::orderBy('created_at','desc')->paginate(2);
         $Gallers = Gallery::orderBy('created_at','desc')->paginate(20);
-        return view('frontend.home',compact('Causes','Events','Posts','Gallers'));
+        return view('frontend.home',compact('Causes','Events','Posts','Gallers','projects'));
     }
 
     public function about()

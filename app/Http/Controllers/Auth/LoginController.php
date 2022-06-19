@@ -24,6 +24,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
@@ -45,7 +46,6 @@ class LoginController extends Controller
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
         if (Auth::guard('staff')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
             return redirect()->route('staff.index');
         }

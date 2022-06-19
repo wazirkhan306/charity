@@ -68,30 +68,7 @@
                 <!-- ====================== links Posts Content Start store =============================================== -->
               </div>
                <textarea value="{{ $Post->body_en }}" class="form-control form-control-lg mb-3" type="text" name="body_en" rows="15">{{ $Post->body_en }}</textarea>
-              <div class="row mt-3">
-              <div class="col-2">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" 
-                     aria-selected="true">
-                    <img src="{{ asset('dashboardassets/images/german.png') }}"> German</a>
-                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><img src="{{ asset('dashboardassets/images/arabic.png') }}"> Arabic</a>
-                  </div>
-                </div>
-                <!-- ====================== links Posts Content Start store =============================================== -->
-                <div class="col-10">
-                  <div class="tab-content" id="v-pills-tabContent">
-                   <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                      <input class="form-control form-control-lg mb-3" type="text" value="{{ $Post->Title_gr }}" placeholder="Your Post Title German" name="Title_gr">
-                      <textarea class="form-control form-control-lg mb-3" value="{{ $Post->body_gr }}" cols="4" name="body_gr" placeholder="Your Post Content German">{{ $Post->body_gr }}</textarea>
-                   </div>
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                      <input class="form-control form-control-lg mb-3" type="text" value="{{ $Post->Title_ar }}" placeholder="Your Post Title Arabic" name="Title_ar">
-                      <textarea class="form-control form-control-lg mb-3" value="{{ $Post->body_ar }}" cols="4" name="body_ar" placeholder="Your Post Content Arabic">{{ $Post->body_ar }}</textarea>
-                  </div>
-                  <!-- ====================== links Posts Content Start store =============================================== -->
-                </div>
-              </div>
-            </div>
+           
           </div>
         </div>
         <!-- / Add New Post Form -->
@@ -145,7 +122,7 @@
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item px-3 pb-2">
                     <div class="custom-control custom-checkbox mb-1">
-                      <input value="{{ $Post->featured }}" 
+                      <input value="{{ $Post->featured }}"
                        <?php if($Post->featured == 'on') {
                         echo "checked";
                        }else{
@@ -159,19 +136,19 @@
                   <!-- ====================== links Posts Content Start store =============================================== -->
                   <li class="list-group-item d-flex px-3">
                     <div class="input-group">
-                      <input value="{{ $Post->excerpt }}" type="text" class="form-control" placeholder="excerpt" aria-label="excerpt" aria-describedby="basic-addon2" name="excerpt"> 
+                      <input value="{{ $Post->excerpt }}" type="text" class="form-control" placeholder="excerpt" aria-label="excerpt" aria-describedby="basic-addon2" name="excerpt">
                     </div>
                   </li>
                   <li class="list-group-item d-flex px-3">
                     <div class="input-group">
-                      <input value="{{ $Post->meta_description }}" type="text" class="form-control" placeholder="meta_description" aria-label="meta_description" aria-describedby="basic-addon2" 
-                             name="meta_description"> 
+                      <input value="{{ $Post->meta_description }}" type="text" class="form-control" placeholder="meta_description" aria-label="meta_description" aria-describedby="basic-addon2"
+                             name="meta_description">
                     </div>
                   </li>
                   <li class="list-group-item d-flex px-3">
                     <div class="input-group">
-                      <input value="{{ $Post->meta_keywords }}" type="text" class="form-control" placeholder="meta_keywords" aria-label="meta_keywords" aria-describedby="basic-addon2" 
-                             name="meta_keywords"> 
+                      <input value="{{ $Post->meta_keywords }}" type="text" class="form-control" placeholder="meta_keywords" aria-label="meta_keywords" aria-describedby="basic-addon2"
+                             name="meta_keywords">
                     </div>
                   </li>
                 </ul>

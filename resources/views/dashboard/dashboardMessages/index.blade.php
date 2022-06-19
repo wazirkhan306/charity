@@ -33,13 +33,13 @@
               <div class="col-lg-12 mt-4">
                 <div class="card card-small card-post mb-4">
                   <div class="card-body">
-                    <h5 class="card-title">subject  {!! $Message->subject !!}</h5>
-                    <p class="card-text text-muted">Content  {!! $Message->Content !!}</p>
+                    <h5 class="card-title"> <strong style="color:coral">Subject:</strong>  {!! $Message->subject !!}</h5>
+                    <p class="card-text text-muted"> <strong style="color:coral">Content:</strong>  {!! $Message->Content !!}</p>
                   </div>
                   <div class="card-footer border-top d-flex">
                     <div class="card-post__author d-flex">
                       <div class="d-flex flex-column justify-content-center ml-3">
-                        <span class="card-post__author-name">name {!! $Message->name !!}</span>
+                        <span class="card-post__author-name"><strong style="color:coral">Name:</strong> {!! $Message->name !!}</span>
                         <small class="text-muted">{{ date('M j, Y', strtotime($Message->created_at)) }}</small>
                       </div>
                     </div>

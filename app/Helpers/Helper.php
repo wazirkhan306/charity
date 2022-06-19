@@ -45,12 +45,7 @@ use App\Models\Event;
      *
      * @return \Illuminate\Http\Response
     **/
-    function Menuarabics()
-    {
 
-        $Menuarabics = menu_item::where('menu_id', '=', 3)->get();
-        return $Menuarabics;
-    }
 
      /**
      * Show the form for creating a new resource.

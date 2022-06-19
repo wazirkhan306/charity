@@ -72,12 +72,12 @@
                 <div class="col-lg-8">
                     <p class="top_text">Need your help?</p>
                     <div class="call-wrap mx-auto">
-                        <h1>Volunteer Needed At Your Area</h1>
+                        <h1>Staff Needed At Your Area</h1>
                         <p>In that Our I own life unto lights them two appear days rule thing fly main for main cause fowl itself dry
                             from made main cause fowl itself dry.</p>
                             <!-- ===============================  About  ======================================== -->
-                        <a href="{{ route('register') }}" class="primary-btn mt-5">
-                            Sign up
+                        <a href="{{ route('staff.login_form') }}" class="primary-btn mt-5">
+                            Login
                             <i class="ti-angle-right ml-1"></i>
                         </a>
                     </div>
