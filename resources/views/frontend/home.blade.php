@@ -143,7 +143,7 @@
 					<div class="call-wrap mx-auto">
 						<h1>Staff Needed At Your Area</h1>
 						<p>In that Our I own life unto lights them two appear days rule thing fly main for main cause fowl itself dry
-							from made main cause fowl itself dry.</p>
+							from made main cause fowl itself dry ..</p>
 						<a href="{{ route('staff.login_form') }}Give Donation" class="primary-btn mt-5">
 							Login
 							<i class="ti-angle-right ml-1"></i>
