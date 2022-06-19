@@ -24,6 +24,7 @@ class AdminUserController extends Controller
         $users = User::where('role_id', 1)->simplePaginate(10);
         return view('dashboard.dashboardUsers.index',compact('users'));
     }
+    
     public function create()
     {
         $Roles = Role::all();

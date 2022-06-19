@@ -15,12 +15,12 @@ class CreateDonorsTable extends Migration
     {
         Schema::create('donors', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->default();
-            $table->string('email')->default();
-            $table->string('image')->default();
-            $table->string('phone')->default();
-            $table->text('address')->default();
-            $table->string('password')->default();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
     }

@@ -69,9 +69,9 @@
                       </td>
                       <!-- ============================================= links Content Start User ============================================= -->
                       <td>
-                            @if ($user->role_id == 1)
-                               Admin
-                            @endif
+                        @if ($user->role_id == 1)
+                            Admin
+                        @endif
                       </td>
                       <!-- ============================================= links Content Start User ============================================= -->
                       <td>
@@ -81,9 +81,6 @@
                       <td>
                         {{ $user->phone }}
                       </td>
-                      {{--  <td>
-                        {{ $user->address }}
-                      </td>  --}}
                       <!-- ============================================= links Content Start User ============================================= -->
                       {{--  <td>
                     <a href="{{ URL::to('dashboard/dashboardUsers')}}/{{$user->name}}/edit" class="mb-2 btn btn-sm btn-primary"><i class="icon-feather-edit-2"></i> Edit</a>

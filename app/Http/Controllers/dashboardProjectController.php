@@ -10,7 +10,7 @@ class dashboardProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest()->get();
+        $projects = Project::latest()->simplePaginate(10);
         return view('dashboard.dashboardProjects.index',compact('projects'));
     }
 
@@ -24,11 +24,13 @@ class dashboardProjectController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'price' => 'required',
             'image' => 'mimes:jpeg,png,jpg',
             'video' => 'mimes:mp4,ogx,oga,ogv,ogg,webm',
             ]);
         $project = new Project;
         $project->title = $request->title;
+        $project->price = $request->price;
         $project->description = $request->description;
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -64,12 +66,14 @@ class dashboardProjectController extends Controller
     {
         $request->validate([
         'title' => 'required',
+        'price' => 'required',
         'description' => 'required',
         'image' => 'mimes:jpeg,png,jpg',
         'video' => 'mimes:mp4,ogx,oga,ogv,ogg,webm',
         ]);
         $project = Project::where('id', '=', $id)->firstOrFail();
         $project->title = $request->title;
+        $project->price = $request->price;
         $project->description = $request->description;
         if($request->hasFile('image')) {
             $image = $request->file('image');

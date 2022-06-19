@@ -12,6 +12,7 @@ class CreateProjectsTable extends Migration
             $table->string('title')->default();
             $table->string('image')->default();
             $table->string('video')->default();
+            $table->string('price')->default();
             $table->string('description')->default();
             $table->timestamps();
         });

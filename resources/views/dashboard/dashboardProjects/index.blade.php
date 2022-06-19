@@ -1,8 +1,6 @@
 @extends('dashboard.layouts.main')
 
 @section('dashboardcontent')
-<!-- ============================================= links Content Start Project ============================================= -->
-<!-- / .main-navbar -->
 @if ($message = Session::get('success'))
 <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -11,7 +9,6 @@
   <i class="icon-material-outline-check mx-2"></i>
 <strong>Success!</strong> {{ $message }}</div>
 @endif
-  <!-- ============================================= links Content Start Project ============================================= -->
 @if ($message = Session::get('Delete'))
 <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -20,7 +17,6 @@
   <i class="icon-material-outline-check mx-2"></i>
 <strong>Delete!</strong> {{ $message }} </div>
 @endif
-<!-- ============================================= links Content Start Project ============================================= -->
   <div class="main-content-container container-fluid px-4">
     <!-- Page Header -->
     <div class="page-header row no-gutters py-4">
@@ -36,9 +32,6 @@
           </h3>
         </div>
       </div>
-      <!-- ============================================= links Content Start Project ============================================= -->
-      <!-- End Page Header -->
-      <!-- Default Light Table -->
       <div class="row">
         <div class="col-lg-12 mb-4">
           <div class="card card-small lo-stats h-100">
@@ -53,8 +46,9 @@
                     <tr>
                       <th> S.No </th>
                       <th class="text-center">Title</th>
-                      <th class="text-center">Image</th>
+                      <th class="text-center">Price</th>
                       <th class="text-left">Description</th>
+                      <th class="text-center">Image</th>
                       <th class="text-left">Video</th>
                       @auth('web')
                       <th class="text-right">Actions</th>
@@ -62,27 +56,26 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- ============================================= links Content Start User ============================================= -->
                     @foreach($projects as $key=> $project)
-
                     <tr >
                       <td >{{$key+1}}</td>
                       <td class="lo-stats__order-details">
                         {{$project->title }}
                       </td>
-                      <td>
-                        <img src="{{asset('storage/projects/image/'.$project->image)}}" alt="project-img" width="150" height="150">
+                      <td class="lo-stats__order-details">
+                       Rs: {{$project->price }}
                       </td>
                       <td>
                         {!!$project->description !!}
                       </td>
-                      <!-- ============================================= links Content Start User ============================================= -->
+                      <td>
+                        <img src="{{asset('storage/projects/image/'.$project->image)}}" alt="project-img" width="130" height="130">
+                      </td>
                       <td class="lo-stats__total  text-success">
                         <video width="150" height="150" controls>
                             <source src="{{ asset('storage/projects/video/'.$project->video) }}" type="video/mp4">
                         </video>
                       </td>
-                      <!-- ============================================= links Content Start User ============================================= -->
                       @auth('web')
                       <td class="text-center">
                         <div class="btn-group d-table ml-auto" role="group" aria-label="Basic example">
@@ -97,28 +90,21 @@
                       @endauth
                     </tr>
                     @endforeach
-                    <!-- ============================================= links Content Start User ============================================= -->
                   </tbody>
-
                 </table>
               </div>
             </div>
-            <!-- ============================================= links Content Start Project ============================================= -->
             <div class="card-footer border-top">
               <div class="row">
                 <div class="col">
-                  <!-- ============================================= links Content Start Project ============================================= -->
-                    {{--  {!! $Projects->links() !!}  --}}
-                    <!-- ============================================= links Content Start Project ============================================= -->
+                    {!! $projects->links() !!}
                   </div>
                   <div class="col text-right view-report">
-                    <!-- ============================================= links Content Start Project ============================================= -->
-                    {{--  @if(COUNT($Projects) != NULL)
-                    <a>Showing 10 to {{ COUNT($Projects) }} of {{ COUNT($Projects) }} Projects</a>
+                    @if(COUNT($projects) != NULL)
+                    <a>Showing 10 to {{ COUNT($projects) }} of {{ COUNT($projects) }} Projects</a>
                     @else
                     <a>Showing 10 to 0 of 0 Projects</a>
-                    @endif  --}}
-                    <!-- ============================================= links Content Start Project ============================================= -->
+                    @endif
                   </div>
               </div>
               <!-- ============================================= links Content Start Project ============================================= -->

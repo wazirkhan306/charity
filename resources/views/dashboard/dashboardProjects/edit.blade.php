@@ -1,7 +1,6 @@
 @extends('dashboard.layouts.main')
 
 @section('dashboardcontent')
-<!-- ============================================= links Content Start Setting ============================================= -->
 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
   <div class="page-header row no-gutters py-4">
@@ -10,9 +9,6 @@
       <h3 class="page-title"><i class="icon-feather-user-plus"></i> Update Project </h3>
     </div>
   </div>
-  <!-- ============================================= links Content Start Setting ============================================= -->
-  <!-- End Page Header -->
-  <!-- Default Light Table -->
   <div class="row">
     <div class="col-lg-10">
       <div class="card card-small mb-4">
@@ -23,18 +19,19 @@
           <li class="list-group-item p-3">
             <div class="row">
               <div class="col">
-                <!-- ============================================= links Content Start Setting ============================================= -->
                 <form action="{{ route('Projects.update', $project->id) }}" method="POST"  role="form" enctype="multipart/form-data">
                   @csrf
                   @method('PUT')
                     <div class="form-row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-6">
                             <label for="title">Title </label>
                             <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="{{$project->title}}">
                         </div>
+                        <div class="form-group col-md-6">
+                            <label for="price">Price </label>
+                            <input type="number" class="form-control" id="price" min="0" placeholder="Enter price" name="price" value="{{$project->price}}">
+                        </div>
                     </div>
-                    <!-- ============================================= links Content Start Setting ============================================= -->
-
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="image">Upload Image </label>
@@ -78,22 +75,16 @@
                     </div>
                     <button type="submit" class="btn btn-accent">Add Project</button>
                     </div>
-                    <!-- ============================================= links Content Start Setting ============================================= -->
                   </div>
                 </li>
               </ul>
             </div>
           </div>
-          <!-- ============================================= links Content Start Setting ============================================= -->
-
           </form>
-          <!-- ============================================= links Content Start Setting ============================================= -->
         </div>
         <!-- End Default Light Table -->
       </div>
-      <!-- ============================================= links Content Start Setting ============================================= -->
       @endsection
-
       @push('scripts')
       <script src=" {{asset('dashboardassets/ckeditor/ckeditor.js')}} "></script>
       @endpush
